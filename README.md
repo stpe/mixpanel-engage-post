@@ -33,7 +33,7 @@ When done, pipe this file to the script to have it perform the changes.
 
 `cat profiles-to-delete.json > node engagepost.js`
 
-`profiles-to-delete.json`
+Where `profiles-to-delete.json` is:
 ```
 [
   {
@@ -47,8 +47,10 @@ When done, pipe this file to the script to have it perform the changes.
 ]
 ```
 
-Example using [mixpanel-engage-query](https://github.com/stpe/mixpanel-engage-query) and [jq](http://stedolan.github.io/jq) to produce above file:
+This will delete the profiles of users with id 12391 and 12408.
 
-`node engage.js -q 'properties["$last_seen"] < "2015-04-24T22:00:00" | jq '[.[] | { "$distinct_id", "$delete": "" }]''
+Example using [mixpanel-engage-query](https://github.com/stpe/mixpanel-engage-query) and [jq](http://stedolan.github.io/jq) to produce file in same format:
+
+`node engage.js -q 'properties["$last_seen"] < "2015-04-24T22:00:00" | jq '[.[] | { "$distinct_id", "$delete": "" }]'`
 
 This will result in a JSON file that when used with `engagepost.js` will delete the profiles of all users last seen prior to 24th of April, 2015.
