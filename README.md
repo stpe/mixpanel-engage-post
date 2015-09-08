@@ -31,7 +31,7 @@ When done, pipe this file to the script to have it perform the changes.
 
 ### Batch delete people profiles
 
-`cat profiles-to-delete.json > node engagepost.js`
+`cat profiles-to-delete.json | node engagepost.js`
 
 Where `profiles-to-delete.json` is:
 ```
