@@ -6,14 +6,11 @@ This script is especially powerful in combination with [mixpanel-engage-query](h
 
 ## Installation
 
-Clone the repository:
-`git clone https://github.com/stpe/mixpanel-engage-post.git`
-
 Install [Node.js](http://nodejs.org/).
 
-Type `npm install` in the directory. That's it!
+Type `npm install --global mixpanel-engage-post`
 
-Run using `node engagepost.js` or make it an executable script by doing `chmod +x engagepost.js`, then run it simply using `./engagepost.js`.
+That's it! Run it by typing `engagepost` in your terminal.
 
 ## Usage
 
@@ -31,7 +28,7 @@ When done, pipe this file to the script to have it perform the changes.
 
 ### Batch delete people profiles
 
-`cat profiles-to-delete.json | node engagepost.js`
+`cat profiles-to-delete.json | engagepost`
 
 Where `profiles-to-delete.json` is:
 ```
@@ -51,6 +48,6 @@ This will delete the profiles of users with id 12391 and 12408.
 
 Example using [mixpanel-engage-query](https://github.com/stpe/mixpanel-engage-query) and [jq](http://stedolan.github.io/jq) to produce file in same format:
 
-`node engage.js -q 'properties["$last_seen"] < "2015-04-24T22:00:00"' | jq '[.[] | { "$distinct_id", "$delete": "" }]'`
+`engage. -q 'properties["$last_seen"] < "2015-04-24T22:00:00"' | jq '[.[] | { "$distinct_id", "$delete": "" }]'`
 
-This will result in a JSON file that when used with `engagepost.js` will delete the profiles of all users last seen prior to 24th of April, 2015.
+This will result in a JSON file that when used with `engagepost` will delete the profiles of all users last seen prior to 24th of April, 2015.
