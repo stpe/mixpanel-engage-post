@@ -12,9 +12,18 @@ Type `npm install --global mixpanel-engage-post`
 
 That's it! Run it by typing `engagepost` in your terminal.
 
-## Usage
+## Setup
 
-To run the script you must specify your Mixpanel API key, secret and your token either as parameters, as environment variables `MIXPANEL_API_KEY`, `MIXPANEL_API_SECRET` and `MIXPANEL_API_TOKEN` or in a [.env](https://github.com/motdotla/dotenv) file.
+To run the script you must specify your Mixpanel API key, secret and your token either as parameters, as environment variables `MIXPANEL_API_KEY`, `MIXPANEL_API_SECRET` and `MIXPANEL_API_TOKEN`, in a [.env](https://github.com/motdotla/dotenv) file located in the script's directory (typically useful if you check out the source from Github) or in a `.engagerc` file in your home directory.
+
+Example of `.env` and `~/.engagerc` file:
+```
+MIXPANEL_API_KEY=f49785f7a0yourkey2019c6ba15d71f5
+MIXPANEL_API_SECRET=a69ca325ayoursecret4f5ed45cafb66
+MIXPANEL_API_TOKEN=d8efyourmixpaneltokenbc49def928c
+```
+
+## Usage
 
 Typically you will put together a JSON-formatted file with an array of updates/deletions/changes/etc to perform on profiles. See the [HTTP API reference](https://mixpanel.com/help/reference/http#people-analytics-updates) for details.
 

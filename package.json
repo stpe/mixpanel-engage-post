@@ -21,6 +21,7 @@
     "exit": "0.1.2",
     "get-stdin": "4.0.1",
     "needle": "0.11.0",
+    "os-homedir": "1.0.1",
     "yargs": "3.30.0"
   },
   "license": "ISC",
