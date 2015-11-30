@@ -24,7 +24,7 @@
     "os-homedir": "1.0.1",
     "yargs": "3.30.0"
   },
-  "license": "ISC",
+  "license": "MIT",
   "preferGlobal": true,
   "bin": {
     "engagepost": "engagepost.js"
